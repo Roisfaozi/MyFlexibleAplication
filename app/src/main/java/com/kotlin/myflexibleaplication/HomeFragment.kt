@@ -17,7 +17,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -64,5 +64,14 @@ class HomeFragment : Fragment() {
         btnCategory.setOnClickListener(this) }
 
     override fun onClick(v: View) {
+        if (v.id == R.id.btn_category){
+            val mCategoryFragment = CategoryFragment()
+            val mFragmentManager = fragmentManager
+            mFragmentManager?.beginTransaction()?.apply {
+                replace(R.id.frame_container, mCategoryFragment, CategoryFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 }
