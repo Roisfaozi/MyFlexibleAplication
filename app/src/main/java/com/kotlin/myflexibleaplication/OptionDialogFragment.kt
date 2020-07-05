@@ -35,7 +35,7 @@ class OptionDialogFragment : DialogFragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnChoose = view.findViewById(R.id.btn_choose)
-        btnClose.setOnClickListener(this)
+        btnChoose.setOnClickListener(this)
         btnClose = view.findViewById(R.id.btn_close)
         btnClose.setOnClickListener(this)
         rgOptions = view.findViewById(R.id.rg_options)
